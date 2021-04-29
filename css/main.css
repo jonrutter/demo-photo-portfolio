@@ -39,7 +39,8 @@ button {
   background-color: transparent;
 }
 
-a {
+a,
+a:hover {
   color: inherit;
   font-size: inherit;
   text-decoration: none;
@@ -159,8 +160,30 @@ ul {
 }
 
 .nav__link {
-  
+  display: block;
+  position: relative;
+  padding: 0.5rem 0;
+  overflow: hidden;
 }
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1rem;
+  background-color: black;
+  transition: transform 0.3s;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.nav__link:hover::after,
+.nav__link:focus::after {
+  transform: translate3d(0, 0, 0);
+}
+
+
 
 
 /* sm screens */
