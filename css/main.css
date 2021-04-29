@@ -18,6 +18,7 @@ body {
   line-height: 1.5;
   font-family: Montserrat, sans-serif;
   height: 100vh;
+  width: 100vw;
 }
 
 button {
@@ -106,7 +107,7 @@ ul {
 /* || Nav */
 
 .nav {
-
+  
 }
 
 .nav__dropdown-button {
@@ -126,17 +127,23 @@ ul {
 
 .nav__dropdown {
   z-index: 2;
-  display: block;
+  display: none;
   position: absolute;
   top: 0;
   right: 0;
-  padding: 8rem 1rem 1rem;
-  width: 100%;
+  padding: 8rem 1rem 8rem;
   height: 100%;
+  width: 100%;
+  max-width: 576px;
   background-color: white;
   color: black;
   font-size: 1.5rem;
   overflow-y: auto;
+  /* transition: right 0.3s ease-in-out; */
+}
+
+.nav__dropdown--open {
+  display: block;
 }
 
 .nav__list {
@@ -147,13 +154,12 @@ ul {
 }
 
 .nav__list-item {
-  display: block;
   margin: 1rem;
   text-align: right;
 }
 
 .nav__link {
-
+  
 }
 
 
@@ -162,14 +168,10 @@ ul {
   .nav__dropdown {
     width: 50%;
   }
-
 }
 
 /* md screens */
 @media screen and (min-width: 768px) {
-  .nav__dropdown {
-    width: 50%;
-  }
 }
 
 /* lg screens */
@@ -184,6 +186,10 @@ ul {
 
 
 /* || Utility Classes */
+
+body {
+  overflow-x: hidden;
+}
 
 .hidden {
   display: none;
@@ -205,6 +211,12 @@ ul {
   cursor: pointer;
 }
 
+/* .site-wrap {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+} */
 
 /* || Media Queries  */
 
