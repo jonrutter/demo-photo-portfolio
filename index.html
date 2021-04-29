@@ -29,12 +29,12 @@
 <body class="home">
   <!-- <div class="site-wrap"> -->
     <div class="nav">
-      <button aria-haspopup="menu" role="button" aria-label="Open site navigation" class="nav__dropdown-button" id="nav-button">
-        <i class="fas fa-bars nav__dropdown-button--open" id="nav-open"></i>
-        <i class="fas fa-times nav__dropdown-button--close hidden" id="nav-close"></i>
+      <button aria-haspopup="true" role="button" aria-label="Open site navigation" class="nav__dropdown-button" id="nav-button">
+        <i class="fas fa-bars nav__dropdown-icon--white" id="nav-open"></i>
+        <i class="fas fa-times hidden" id="nav-close"></i>
       </button>
       <!-- role should equal value of trigger's aria-haspopup -->
-      <nav class="nav__dropdown" id="nav-dropdown" role="menu" aria-hidden="true">
+      <nav class="nav__dropdown" id="nav-dropdown" aria-hidden="true">
         <ul class="nav__list">
           <li class="nav__list-item">
             <a href="people.html" class="nav__link">people</a>
