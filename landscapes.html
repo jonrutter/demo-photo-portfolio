@@ -64,67 +64,67 @@
     <div class="grid">
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-anne-mccarthy-3900437-preview.jpg" alt="">
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-anne-mccarthy-3900437-preview.jpg" data-slide="0" alt="">
       </div>
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-benjamin-suter-3617500-preview.jpg" alt="">
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-benjamin-suter-3617500-preview.jpg" data-slide="1" alt="">
       </div>
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-daria-shevtsova-1680140-preview.jpg" alt="">          
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-daria-shevtsova-1680140-preview.jpg" data-slide="2" alt="">          
       </div>
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-chait-goli-1797121-preview.jpg" alt="">          
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-chait-goli-1797121-preview.jpg" data-slide="3" alt="">          
       </div>
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-gabriela-palai-507410-preview.jpg" alt="">
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-gabriela-palai-507410-preview.jpg" data-slide="4" alt="">
       </div>
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-jacob-colvin-1761279-preview.jpg" alt="">
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-jacob-colvin-1761279-preview.jpg" data-slide="5" alt="">
       </div>
 
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-krivec-ales-547115-preview.jpg" alt="">
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-krivec-ales-547115-preview.jpg" data-slide="6" alt="">
       </div>
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-martin-damboldt-814499-preview.jpg" alt="">
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-martin-damboldt-814499-preview.jpg" data-slide="7" alt="">
       </div>
       
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-pixabay-210307-preview.jpg" alt="">
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-pixabay-210307-preview.jpg" data-slide="8" alt="">
       </div>
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-pixabay-414110-preview.jpg" alt="">
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-pixabay-414110-preview.jpg" data-slide="9" alt="">
       </div>
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-riciardus-789380-preview.jpg" alt="">
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-riciardus-789380-preview.jpg" data-slide="10" alt="">
       </div>
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-sebastian-palomino-1955134-preview.jpg" alt="">
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-sebastian-palomino-1955134-preview.jpg" data-slide="11" alt="">
       </div>
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-simon-berger-666737-preview.jpg" alt="">
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-simon-berger-666737-preview.jpg" data-slide="12" alt="">
       </div>
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-trace-hudson-2724664-preview.jpg" alt="">          
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-trace-hudson-2724664-preview.jpg" data-slide="13" alt="">          
       </div>
 
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-trace-hudson-2896668-preview.jpg" alt="">          
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-trace-hudson-2896668-preview.jpg" data-slide="14" alt="">          
       </div>
       <div class="grid__item">
-        <img class="grid__image" src="images/nature-and-landscapes/pexels-valiphotos-589808-preview.jpg" alt="">
+        <img class="grid__image" src="images/nature-and-landscapes/pexels-valiphotos-589808-preview.jpg" data-slide="15" alt="">
       </div>
     </div>
     
@@ -135,75 +135,74 @@
       </button>
 
       <!-- Button controls -->
-      <button class="modal__previous-button">&#10094;</button>
-      <button class="modal__next-button">&#10095;</button>
+      <button class="modal__previous-button" id="image-grid-modal-previous">&#10094;</button>
+      <button class="modal__next-button" id="image-grid-modal-next">&#10095;</button>
       
 
       <div class="modal__content">
 
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-anne-mccarthy-3900437-preview-2x.jpg" data-src="" alt="">
+        <div class="modal__slide" data-slide="0">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-anne-mccarthy-3900437-preview-2x.jpg" alt="">
         </div>
   
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-benjamin-suter-3617500-preview-2x.jpg" data-src="" alt="">
+        <div class="modal__slide" data-slide="1">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-benjamin-suter-3617500-preview-2x.jpg" alt="">
         </div>
   
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-daria-shevtsova-1680140-preview-2x.jpg" data-src="" alt="">          
+        <div class="modal__slide" data-slide="2">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-daria-shevtsova-1680140-preview-2x.jpg" alt="">          
         </div>
   
-        <div class="modal__slide modal__slide--active">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-chait-goli-1797121-preview-2x.jpg" data-src="" alt="">          
+        <div class="modal__slide" data-slide="3">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-chait-goli-1797121-preview-2x.jpg" alt="">          
         </div>
   
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-gabriela-palai-507410-preview-2x.jpg" data-src="" alt="">
+        <div class="modal__slide" data-slide="4">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-gabriela-palai-507410-preview-2x.jpg" alt="">
         </div>
   
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-jacob-colvin-1761279-preview-2x.jpg" data-src="" alt="">
+        <div class="modal__slide" data-slide="5">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-jacob-colvin-1761279-preview-2x.jpg" alt="">
         </div>
   
-  
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-krivec-ales-547115-preview-2x.jpg" data-src="" alt="">
+        <div class="modal__slide" data-slide="6">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-krivec-ales-547115-preview-2x.jpg" alt="">
         </div>
   
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-martin-damboldt-814499-preview-2x.jpg" data-src="" alt="">
+        <div class="modal__slide" data-slide="7">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-martin-damboldt-814499-preview-2x.jpg" alt="">
         </div>
         
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-pixabay-210307-preview-2x.jpg" data-src="" alt="">
+        <div class="modal__slide" data-slide="8">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-pixabay-210307-preview-2x.jpg" alt="">
         </div>
   
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-pixabay-414110-preview-2x.jpg" data-src="" alt="">
+        <div class="modal__slide" data-slide="9">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-pixabay-414110-preview-2x.jpg" alt="">
         </div>
   
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-riciardus-789380-preview-2x.jpg" data-src="" alt="">
+        <div class="modal__slide" data-slide="10">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-riciardus-789380-preview-2x.jpg" alt="">
         </div>
   
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-sebastian-palomino-1955134-preview-2x.jpg" data-src="" alt="">
+        <div class="modal__slide" data-slide="11">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-sebastian-palomino-1955134-preview-2x.jpg" alt="">
         </div>
   
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-simon-berger-666737-preview-2x.jpg" data-src="" alt="">
+        <div class="modal__slide" data-slide="12">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-simon-berger-666737-preview-2x.jpg" alt="">
         </div>
   
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-trace-hudson-2724664-preview-2x.jpg" data-src="" alt="">          
+        <div class="modal__slide" data-slide="13">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-trace-hudson-2724664-preview-2x.jpg" alt="">          
         </div>
   
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-trace-hudson-2896668-preview-2x.jpg" data-src="" alt="">          
+        <div class="modal__slide" data-slide="14">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-trace-hudson-2896668-preview-2x.jpg" alt="">          
         </div>
 
-        <div class="modal__slide">
-          <img class="modal__image image-defer-load" src="images/nature-and-landscapes/pexels-valiphotos-589808-preview-2x.jpg" data-src="" alt="">
+        <div class="modal__slide" data-slide="15">
+          <img class="modal__image image-defer-load" src="" data-src="images/nature-and-landscapes/pexels-valiphotos-589808-preview-2x.jpg" alt="">
         </div>
 
         <!-- Caption text -->

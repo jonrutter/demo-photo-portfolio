@@ -429,7 +429,7 @@ img {
 
 .footer {
   padding: 1rem;
-  margin: 3rem 3rem 1rem;
+  /* margin: 3rem 3rem 1rem; */
   font-size: 1.2rem;
   display: flex;
   flex-wrap: wrap;
@@ -444,7 +444,7 @@ img {
 }
 
 .footer__link {
-  box-sizing: content-box;
+  /* box-sizing: content-box; */
   display: inline-block;
   position: relative;
 }
@@ -468,6 +468,13 @@ img {
   transform: scaleX(1);
   opacity: 1;
 }
+
+@media screen and (min-width: 768px) {
+  .footer {
+    margin: 3rem 3rem 1rem;
+  } 
+}
+
 
 /* || Utility Classes */
 

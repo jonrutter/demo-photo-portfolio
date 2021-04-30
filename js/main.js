@@ -6,9 +6,13 @@ const navOpen = document.querySelector('#nav-open'); // <i> that displays when b
 const navClose = document.querySelector('#nav-close'); // <i> that displays when button closes the nav - times icon
 
 const images = document.querySelectorAll('.grid__image');
+const slides = document.querySelectorAll('.modal__slide');
 
 const imageGridModal = document.querySelector('#image-grid-modal');
 const imageGridModalClose = document.querySelector('#image-grid-modal-close');
+const imageGridModalNext = document.querySelector('#image-grid-modal-next');
+const imageGridModalPrevious = document.querySelector('#image-grid-modal-previous');
+
 
 // Nav Functions
 
@@ -69,6 +73,10 @@ navButton.addEventListener('click', toggleNav);
 
 // Image Modal Box Functions
 
+let currentSlide = 0;
+const totalSlides = slides.length;
+
+// Returns true if modal box is open, false if not
 function isModalOpen() {
   if (imageGridModal !== null) {
     return !imageGridModal.classList.contains('hidden');
@@ -77,19 +85,67 @@ function isModalOpen() {
   }
 }
 
-function openModal() {
-  body.classList.add('no-scroll');
-  imageGridModal.classList.remove('hidden');
+
+// Closes all slides
+function closeSlides() {
+  slides.forEach(slide => slide.classList.remove('modal__slide--active'));
 }
 
+
+// Takes a slide element as an argument, opens that slide
+function openSlide(slide) {
+  console.log(slide);
+  closeSlides();
+  slide.classList.add('modal__slide--active'); // Activating the slide by adding modal__slide--active class
+  const image = slide.firstElementChild; // 
+  // for performance purposes, the high resolution images are not all downloaded when the page loads
+  // srcs to the high resolution images are stored in each <img>'s data-src attribute
+  // So must check whether the image has been loaded yet, and if not, load it by setting the src to the correct value 
+  if (!image.getAttribute("src")) {
+    image.src = image.dataset.src;
+  }
+}
+
+// Determines which slide should be opened when pressing the next button
+function nextSlide() {
+  currentSlide += 1;
+  if (currentSlide == totalSlides) {
+    currentSlide = 0;
+  }
+  const slide = slides[currentSlide];
+  openSlide(slide);
+}
+
+// Determines which slide should be opened when pressing the previous button
+function previousSlide() {
+  currentSlide -= 1;
+  if (currentSlide < 0) {
+    currentSlide = totalSlides - 1;
+  }
+  const slide = slides[currentSlide];
+  openSlide(slide);
+}
+
+
+// Opens the main modal box
+function openModal(e) {
+  body.classList.add('no-scroll');
+  imageGridModal.classList.remove('hidden');
+  // Each thumbnail has a data-slide attribute that connects it to the correct slide
+  const slide = slides[e.target.dataset.slide]; // Selecting the slide to open based on which image thumbnail the user clicked on
+  openSlide(slide);
+}
+
+// Closes the main modal box
 function closeModal() {
+  closeSlides();
   body.classList.remove('no-scroll');
   imageGridModal.classList.add('hidden');
 }
 
-function toggleModal() {
+function toggleModal(e) {
   if (imageGridModal.classList.contains('hidden')) {
-    openModal();
+    openModal(e);
   } else {
     closeModal();
   }
@@ -104,6 +160,14 @@ if (images !== null) {
 
 if (imageGridModalClose !== null) {
   imageGridModalClose.addEventListener('click', closeModal);
+}
+
+if (imageGridModalNext !== null) {
+  imageGridModalNext.addEventListener('click', nextSlide);
+}
+
+if (imageGridModalPrevious !== null) {
+  imageGridModalPrevious.addEventListener('click', previousSlide);
 }
 
 // Body no-scroll Click Listeners
