@@ -171,7 +171,8 @@ img {
   z-index: 3;
 }
 
-.nav__dropdown-icon--white {
+
+.home .nav__dropdown-button--open {
   color: white;
 }
 

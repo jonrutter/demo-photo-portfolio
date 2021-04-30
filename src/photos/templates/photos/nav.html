@@ -1,0 +1,26 @@
+<div class="nav">
+  <button aria-haspopup="true" role="button" aria-label="Open site navigation" class="nav__dropdown-button" id="nav-button">
+    <i class="fas fa-bars nav__dropdown-button--open" id="nav-open"></i>
+    <i class="fas fa-times nav__dropdown-button--close hidden" id="nav-close"></i>
+  </button>
+  <!-- role should equal value of trigger's aria-haspopup -->
+  <nav class="nav__dropdown" id="nav-dropdown" aria-hidden="true">
+    <ul class="nav__list">
+      <li class="nav__list-item">
+        <a href="{% url 'people' %}" class="nav__link">people</a>
+      </li>
+      <li class="nav__list-item">
+        <a href="{% url 'animals' %}" class="nav__link">animals</a>
+      </li>
+      <li class="nav__list-item">
+        <a href="{% url 'nature' %}" class="nav__link">nature & landscapes</a>
+      </li>
+      <li class="nav__list-item">
+        <a href="{% url 'weddings' %}" class="nav__link">weddings</a>
+      </li>
+      <li class="nav__list-item">
+        <a href="{% url 'contact' %}" class="nav__link">contact</a>
+      </li>
+    </ul>
+  </nav>
+</div>
