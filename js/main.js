@@ -5,6 +5,11 @@ const navButton = document.querySelector('#nav-button'); // <button> that toggle
 const navOpen = document.querySelector('#nav-open'); // <i> that displays when button opens the nav - hamburger icon
 const navClose = document.querySelector('#nav-close'); // <i> that displays when button closes the nav - times icon
 
+const images = document.querySelectorAll('.grid__image');
+
+const imageGridModal = document.querySelector('#image-grid-modal');
+const imageGridModalClose = document.querySelector('#image-grid-modal-close');
+
 // Nav Functions
 
 function isNavOpen() {
@@ -43,6 +48,10 @@ function closeNav() {
 }
 
 function toggleNav() {
+  if (isModalOpen()) {
+    return;
+  }
+
   if (isNavOpen()) {
     closeNav();
   } else {
@@ -52,8 +61,60 @@ function toggleNav() {
 
 // Nav Event Listeners
 navButton.addEventListener('click', toggleNav);
+
+
+
+
+
+
+// Image Modal Box Functions
+
+function isModalOpen() {
+  if (imageGridModal !== null) {
+    return !imageGridModal.classList.contains('hidden');
+  } else {
+    return false;
+  }
+}
+
+function openModal() {
+  body.classList.add('no-scroll');
+  imageGridModal.classList.remove('hidden');
+}
+
+function closeModal() {
+  body.classList.remove('no-scroll');
+  imageGridModal.classList.add('hidden');
+}
+
+function toggleModal() {
+  if (imageGridModal.classList.contains('hidden')) {
+    openModal();
+  } else {
+    closeModal();
+  }
+}
+
+
+// Image Modal Box Event Listeners
+
+if (images !== null) {
+  images.forEach(image => image.addEventListener('click', toggleModal));
+}
+
+if (imageGridModalClose !== null) {
+  imageGridModalClose.addEventListener('click', closeModal);
+}
+
+// Body no-scroll Click Listeners
+
 body.addEventListener('click', e => {
   if (e.target.classList.contains('no-scroll')) {
-    closeNav();
+    if (isNavOpen()) {
+      closeNav();
+    }
+    if (isModalOpen()) {
+      closeModal();
+    }
   }
 });
