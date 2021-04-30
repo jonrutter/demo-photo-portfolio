@@ -12,7 +12,8 @@ const imageGridModal = document.querySelector('#image-grid-modal');
 const imageGridModalClose = document.querySelector('#image-grid-modal-close');
 const imageGridModalNext = document.querySelector('#image-grid-modal-next');
 const imageGridModalPrevious = document.querySelector('#image-grid-modal-previous');
-
+const imageGridModalCaption = document.querySelector('#image-grid-modal-caption');
+const imageGridModalCaptionLink = document.querySelector('#image-grid-modal-caption-link');
 
 // Nav Functions
 
@@ -73,7 +74,7 @@ navButton.addEventListener('click', toggleNav);
 
 // Image Modal Box Functions
 
-let currentSlide = 0;
+let currentSlide = 0; // the index of the currently-selected slide
 const totalSlides = slides.length;
 
 // Returns true if modal box is open, false if not
@@ -94,7 +95,6 @@ function closeSlides() {
 
 // Takes a slide element as an argument, opens that slide
 function openSlide(slide) {
-  console.log(slide);
   closeSlides();
   slide.classList.add('modal__slide--active'); // Activating the slide by adding modal__slide--active class
   const image = slide.firstElementChild; // 
@@ -104,12 +104,16 @@ function openSlide(slide) {
   if (!image.getAttribute("src")) {
     image.src = image.dataset.src;
   }
+
+  imageGridModalCaption.textContent = image.dataset.caption;
+  imageGridModalCaptionLink.textContent = image.dataset.href;
+  imageGridModalCaptionLink.href = image.dataset.href;
 }
 
 // Determines which slide should be opened when pressing the next button
 function nextSlide() {
   currentSlide += 1;
-  if (currentSlide == totalSlides) {
+  if (currentSlide >= totalSlides) {
     currentSlide = 0;
   }
   const slide = slides[currentSlide];
@@ -132,7 +136,9 @@ function openModal(e) {
   body.classList.add('no-scroll');
   imageGridModal.classList.remove('hidden');
   // Each thumbnail has a data-slide attribute that connects it to the correct slide
-  const slide = slides[e.target.dataset.slide]; // Selecting the slide to open based on which image thumbnail the user clicked on
+  currentSlide = Number(e.target.dataset.slide);
+  const slide = slides[currentSlide]; // Selecting the slide to open based on which image thumbnail the user clicked on
+
   openSlide(slide);
 }
 
