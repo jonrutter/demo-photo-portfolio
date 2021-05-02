@@ -41,6 +41,8 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'photos.apps.PhotosConfig',
 
+    'easy_thumbnails',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -143,11 +145,9 @@ MEDIA_URL = 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# THUMBNAIL_ALIASES = {
-#     'posts.Post.header_image' : {
-#         'xs': {'size': (426, 240), 'crop': True},
-#         'sm': {'size': (640, 360), 'crop': True},
-#         'md': {'size': (800, 450), 'crop': True},
-#         'lg': {'size': (1280, 720), 'crop': True},
-#     },
-# }
+THUMBNAIL_ALIASES = {
+    '' : {
+        'sm': {'size': (680, 0)},
+        'lg': {'size': (1360, 0)},
+    },
+}

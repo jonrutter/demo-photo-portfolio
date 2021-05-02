@@ -1,9 +1,11 @@
 from django.db import models
-
-# Create your models here.
+from PIL import Image, ImageOps
+from easy_thumbnails.signals import saved_file
+from easy_thumbnails.signal_handlers import generate_aliases_global
 
 def build_photos_path(instance, filename):
     return 'images/{0}/{1}'.format(instance.category, filename)
+
 
 class Photo(models.Model):
     image = models.ImageField(upload_to=build_photos_path)
@@ -16,4 +18,9 @@ class Photo(models.Model):
     category = models.CharField(max_length=8, choices=CATEGORY_CHOICES)
     alt_text = models.CharField('Alternate text for visually impaired users', max_length=200)
     caption = models.CharField('Image caption', max_length=200)
-    href = models.URLField('Link to original', max_length=200)
+    href = models.URLField('Link to original', max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return self.category + ": " + self.alt_text
+
+saved_file.connect(generate_aliases_global)
