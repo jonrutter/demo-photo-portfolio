@@ -14,6 +14,7 @@ const imageGridModalNext = document.querySelector('#image-grid-modal-next');
 const imageGridModalPrevious = document.querySelector('#image-grid-modal-previous');
 const imageGridModalCaption = document.querySelector('#image-grid-modal-caption');
 const imageGridModalCaptionLink = document.querySelector('#image-grid-modal-caption-link');
+const imageGridModalDownload = document.querySelector('#image-grid-modal-download')
 
 // Nav Functions
 
@@ -49,7 +50,7 @@ function closeNav() {
   navLinks.forEach(navLink => navLink.setAttribute('tabindex', '-1')); // when nav dropdown menu is closed, the links inside it should be inaccessible by tab
   navOpen.focus();
 
-  // Accessibility attributes
+  // aria
   navDropdown.setAttribute('aria-hidden', 'true');
   navOpen.removeAttribute('aria-expanded'); // Specs recommend that aria-expanded is not present when the menu is hidden. https://www.w3.org/TR/wai-aria-practices/#wai-aria-roles-states-and-properties-14
 }
@@ -190,3 +191,16 @@ body.addEventListener('click', e => {
     }
   }
 });
+
+
+// esc keypress
+
+document.addEventListener('keydown', (e) => {
+  if (e.key == 'Escape') {
+    if (modalIsOpen()) {
+      closeModal();
+    } else if (navIsOpen()) {
+      closeNav();
+    }
+  }
+})
