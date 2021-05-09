@@ -345,6 +345,7 @@ address {
   display: inline-block;
   width: 100%;
   margin-bottom: 1rem;
+  padding: 0.5rem;
 }
 
 .grid__image {
@@ -353,7 +354,6 @@ address {
   max-width: 100%;
   height: auto;
   cursor: pointer;
-  padding: 0.5rem;
   transition: transform 0.3s;
 }
 
