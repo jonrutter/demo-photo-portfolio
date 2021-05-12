@@ -1,0 +1,23 @@
+<nav class="nav">
+  <button aria-label="Open navigation" aria-controls="nav-dropdown" class="nav__dropdown-button" id="nav-open" tabindex="0"><i class="fas fa-bars nav__dropdown-button--open"></i></button>
+  <div class="nav__dropdown" id="nav-dropdown" aria-hidden="true">
+    <button aria-label="Close navigation" class="nav__dropdown-button" id="nav-close" tabindex="-1"><i class="fas fa-times nav__dropdown-button--close"></i></button>
+    <ul class="nav__list">
+      <li class="nav__list-item">
+        <a href="{% url 'people' %}" class="nav__link" tabindex="-1">people</a>
+      </li>
+      <li class="nav__list-item">
+        <a href="{% url 'animals' %}" class="nav__link" tabindex="-1">animals</a>
+      </li>
+      <li class="nav__list-item">
+        <a href="{% url 'nature' %}" class="nav__link" tabindex="-1">nature & landscapes</a>
+      </li>
+      <li class="nav__list-item">
+        <a href="{% url 'weddings' %}" class="nav__link" tabindex="-1">weddings</a>
+      </li>
+      <li class="nav__list-item">
+        <a href="{% url 'contact' %}" class="nav__link" tabindex="-1">contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,53 @@
+{% load static %}
+{% load thumbnail %}
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  {% include 'photos/head.html' %}
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="header__title"><a href="{% url 'home' %}" class="header__link">Lorem Ipsum</a></h1>
+  </header>
+
+  {% include 'photos/nav.html' %}
+
+  <main class="contact">
+    <section class="contact__column">
+      <h2 class="section-heading section-heading--no-padding-left">{{ title|lower }}</h2>
+      <ul>
+        <li>
+          <span class="contact__link">Lorem Ipsum Photography</span>
+        </li>
+        <li>
+          <a href="#" class="contact__link">lorem@ipsum.com</a>
+        </li>
+        <li>
+          <span class="contact__link">(000) 000-0000</span>
+        </li>
+        <li class="contact__link">
+          <address>
+            123 Lorem Ipsum Lane<br>
+            Lorem Ipsum, IL 00000
+          </address>
+        </li>
+      </ul>
+    </section>
+    <div class="contact__column">
+      <img 
+        class="contact__image" 
+        srcset="/media//profile/profile-600w.jpg,
+                /media//profile/profile-900w.jpg 1.5x,
+                /media//profile/profile-1200w.jpg 2x,
+                /media//profile/profile-1800w.jpg 3x"
+        src="/media/profile/profile-1800w.jpg"
+        alt="Portfolio profile picture">
+    </div>
+
+  </main>
+
+  {% include 'photos/footer.html' %}
+</body>
+</html>
