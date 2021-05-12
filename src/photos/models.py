@@ -22,5 +22,8 @@ class Photo(models.Model):
 
     def __str__(self):
         return self.category + ": " + self.alt_text
+    
+    class Meta:
+        ordering = ["?"]
 
 saved_file.connect(generate_aliases_global)

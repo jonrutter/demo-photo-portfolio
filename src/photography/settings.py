@@ -149,5 +149,7 @@ THUMBNAIL_ALIASES = {
     '' : {
         'sm': {'size': (680, 0)},
         'lg': {'size': (1360, 0)},
+        'full': {'size': (1920, 0)}
     },
 }
+

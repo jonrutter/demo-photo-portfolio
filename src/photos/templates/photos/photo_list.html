@@ -22,7 +22,12 @@
       {% for photo in photos %}
 
         <div class="grid__item">
-          <img class="grid__image" src="{{ photo.image|thumbnail_url:'sm' }}" data-slide="{{ forloop.counter0 }}" alt="">
+          <img 
+            alt="{{ photo.alt_text }}"
+            class="grid__image" 
+            src="{{ photo.image|thumbnail_url:'sm' }}" 
+            data-slide="{{ forloop.counter0 }}" 
+          >
         </div>
 
       {% endfor %}
@@ -50,8 +55,8 @@
           {% for photo in photos %}
   
             <div class="modal__slide" data-slide="{{ forloop.counter0 }}">
-              <img class="modal__image image-defer-load" src="" alt="{{ photo.alt_text }}" data-src="{{ photo.image|thumbnail_url:'lg' }}" data-caption="{{ photo.caption }}" data-href="{{ photo.href }}">
-              <!-- <div class="modal__progress"></div> -->
+              <img class="modal__image image-defer-load" src="" alt="" data-src="{{ photo.image|thumbnail_url:'full' }}" data-caption="{{ photo.caption }}" data-href="{{ photo.href }}">
+              <div class="modal__progress" aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             </div>
     
           {% endfor %}
